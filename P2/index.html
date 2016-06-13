@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		var copiaObjeto = function(objeto) {
+
+			// Variable para almacenar copia del objeto.
+			var temp = new Object ;
+
+			// Recorrer todos los elementos almacenados dentro del objeto
+			for (item in objeto) {
+
+				// Si el elemento es de tipo objeto, hacer una llamada recursiva para devolver una copia de este sub-objeto
+				if (typeof(objeto[item]) == "object") {
+					// console.log[objeto.item]
+					temp[item] = copiaObjeto(objeto[item]) ;
+				} 
+				
+				// Si no es una copia, copiar el contenido del objeto en el objeto temporal
+				else {
+					temp[item] = objeto[item] ;
+				}
+			}
+
+			// Despues de correr todos los elementos, retornar el nuevo objeto.
+			return temp
+		}
+
+		var	alumno1	= {nombre:	"Matías",	edad:5, arr:[1,2,3,4]}
+		var	alumno2	= copiaObjeto(alumno1) ;
+
+	</script>
+</body>
+</html>
