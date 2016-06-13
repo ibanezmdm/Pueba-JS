@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+
+		// La variale alumno1 se pasa por referencia a la variable alumno 2
+		// por lo tanto, se copia la direccion de memoria donde esta se aloja.
+		// Esto causa que cualquier cambio en ambas variables en cualquiera de las dos variables
+		// las afecte a ambas.
+
+		var	alumno1	=	{nombre:	"Matías",	edad:5}
+		var	alumno2	=	alumno1
+		alumno2.nombre	=	"Sebastián"
+
+	</script>
+</body>
+</html>
