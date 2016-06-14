@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		#texto {
+			position: absolute;
+			/*display: inline;*/
+			float: right;
+			right: 20px;
+			top:0px;
+		}
+	</style>
+
+</head>
+<body>
+	<input class="texto" type="text" name="" value="" placeholder="Ingrese Texto">
+	<br>
+	<br>
+	<input class="tam" type="number" name="" value="14" placeholder="Tamaño Letra">
+	<br>
+	<br>
+	<select class="font">
+		<option value="serif">Serif</option>
+		<option value="sans-serif">Sans-Serif</option>
+		<option value="monospace">Monospace</option>
+	</select>
+	<br>
+	<br>
+	<input class="color" type="color" name="" value="">
+	<br>
+	<br>
+	<input class="btn" type="submit" name="" value="Actualizar">
+	<p id="texto">hola</p>
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+	<script>
+		
+		$(".btn").on("click", function () {
+			var texto = $(".texto").val() ;
+			var tam = $(".tam").val() ;
+			var font = $(".font").val() ;
+			var color = $(".color").val() ;
+
+			// console.log (texto + " " + tam + " " + font + " " + color)
+
+
+			$("#texto").text(texto);
+			$("#texto").css("color", color);
+			$("#texto").css("font-size", tam+"px");
+			$("#texto").css("font-family", font);
+
+		})
+		
+	</script>
+
+</body>
+</html>
