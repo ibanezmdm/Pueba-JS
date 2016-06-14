@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.container {
+			background-color:peru;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<ol>
+			<li>Elemento 1</li>
+			<li>Elemento 2</li>
+			<li>Elemento 3</li>
+		</ol>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+	<script>
+		var i = 3 ;
+
+		$(".container").on("click", function() {
+			$("ol").append("<li>Elemento " + ++i +"</li>" )
+		})
+	</script>
+
+</body>
+</html>
