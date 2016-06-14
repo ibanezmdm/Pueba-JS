@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.cuadrado {
+			width: 150px;
+			height: 150px;
+			background: black;
+			position: absolute;
+			float: left;
+			left: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="cuadrado">a</div>
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+	<script>
+		var mov = 0;
+		$(document).keydown(function(key) {
+			if (key.keyCode == 37) {
+				mov = mov - 50;
+				console.log("izquierda") ;
+			} else if (key.keyCode == 39) {
+				console.log("derecha") ;
+				mov = mov + 50 ;
+			}
+			console.log(mov)
+			$(".cuadrado").attr("left",mov+"px") ;
+		})
+	</script>
+</body>
+</html>
