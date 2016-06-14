@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		var Alumno = function (nombre,notas) {
+			if (isNaN(nombre)){
+				this.nombre = nombre;
+			}
+
+			this.notasInt = function(arr) {
+				for (i in arr) {
+					if (isNaN(arr[i])) {
+						alert("Dentro de las notas ingresadas hay una  varibale string")
+						return ;
+					}
+				}
+				return arr ;
+			}
+
+			this.notas = this.notasInt(notas) ;
+
+			this.promedio = function () {
+				var suma = 0;
+				for (var i = 0; i < this.notas.length ; i++) {
+					suma = suma + this.notas[i]
+				}
+				return (suma / i)
+			}
+
+		}
+
+		var alumno1 = new Alumno (1, [1,2,3,"hola"])
+		var alumno2 = new Alumno ("Sebastian", [10,9,10])
+
+	</script>
+</body>
+</html>
